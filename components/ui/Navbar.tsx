@@ -14,6 +14,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import { NavbarTopItems } from './NavbarTopItems';
 import { Search, SearchIconWrapper, StyledInputBase } from './WrapperSearchBar';
 import { SideMenu } from './SideMenu';
+import { version } from '../../package.json';
 
 interface Props {
   onChange?: (value: ChangeEvent<HTMLInputElement>) => void;
@@ -56,6 +57,12 @@ export const Navbar = ({ onChange }: Props) => {
             <Typography variant='h6'>Directory | AtilaDev</Typography>
           </Link>
         </NextLink>
+
+        <Box sx={{ display: { xs: 'none', sm: 'inline' } }} ml={2}>
+          <Typography variant='caption' color='gray'>
+            Version: {version}
+          </Typography>
+        </Box>
 
         <Box flex={1} />
 

@@ -17,6 +17,7 @@ import {
 } from 'react-icons/ai';
 import * as externalLinks from '../../utils';
 import Typography from '@mui/material/Typography';
+import { version } from '../../package.json';
 
 interface Props {
   open: boolean;
@@ -72,6 +73,14 @@ export const SideMenu = ({ open, onClose }: Props) => {
               <AiOutlineGlobal />
             </ListItemIcon>
             <ListItemText primary={'Personal Website'} />
+          </ListItem>
+
+          <Divider variant='middle' sx={{ mt: 1 }} />
+
+          <ListItem>
+            <Typography variant='caption' color='gray'>
+              Version: {version}
+            </Typography>
           </ListItem>
         </List>
       </Box>
