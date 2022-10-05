@@ -7,6 +7,7 @@ import {
   IconButton,
   InputBase,
   Link,
+  ListItem,
   Toolbar,
   Typography,
 } from '@mui/material';
@@ -18,10 +19,12 @@ import {
   AiOutlineTwitter,
   AiOutlineGlobal,
   AiOutlineMenu,
+  AiFillInfoCircle,
 } from 'react-icons/ai';
 import SearchIcon from '@mui/icons-material/Search';
 
 import { grey } from '@mui/material/colors';
+import { HtmlTooltip } from './HtmlTooltip';
 
 interface Props {
   onChange?: (value: ChangeEvent<HTMLInputElement>) => void;
@@ -94,13 +97,13 @@ export const Navbar = ({ onChange }: Props) => {
     <AppBar>
       <Toolbar>
         {/* Drawer menu */}
-        {/* <NextLink href={'/'} passHref>
+        <NextLink href={'/'} passHref>
           <Link>
             <IconButton>
               <AiOutlineMenu />
             </IconButton>
           </Link>
-        </NextLink> */}
+        </NextLink>
 
         <NextLink href={'/'} passHref>
           <Link
@@ -115,28 +118,55 @@ export const Navbar = ({ onChange }: Props) => {
         <Box flex={1} />
 
         <Box sx={{ display: { xs: 'block' } }}>
-          <IconButton onClick={gitHubLink}>
-            <AiOutlineGithub />
-          </IconButton>
+          <HtmlTooltip
+            title={
+              <>
+                <Typography variant='subtitle1' color='inherit'>
+                  Directory App
+                </Typography>
+                <Typography variant='subtitle2'>
+                  Is an easy & quick search to find google fonts using{' '}
+                  <NextLink
+                    href='https://github.com/expo/google-fonts'
+                    passHref
+                  >
+                    <a target='_blank'>@expo-google-fonts</a>
+                  </NextLink>{' '}
+                  for your React Native App. Developed with ❤️ by{' '}
+                  <NextLink href='https://atiladev.com/en' passHref>
+                    <a target='_blank'>AtilaDev</a>
+                  </NextLink>
+                </Typography>
+              </>
+            }
+          >
+            <IconButton>
+              <AiFillInfoCircle />
+            </IconButton>
+          </HtmlTooltip>
 
-          <IconButton onClick={linkedInLink}>
-            <AiOutlineLinkedin />
+          <IconButton onClick={atilaDevLink}>
+            <AiOutlineGlobal />
           </IconButton>
 
           {/* Put inside of Drawer in the future */}
           <Grid item sx={{ display: { xs: 'none', sm: 'inline' } }}>
-            <IconButton onClick={atilaDevLink}>
-              <AiOutlineGlobal />
+            <IconButton onClick={gitHubLink}>
+              <AiOutlineGithub />
+            </IconButton>
+
+            <IconButton onClick={linkedInLink}>
+              <AiOutlineLinkedin />
             </IconButton>
 
             <IconButton onClick={twitterLink}>
               <AiOutlineTwitter />
             </IconButton>
-          </Grid>
 
-          <IconButton onClick={mailLink}>
-            <AiOutlineMail />
-          </IconButton>
+            <IconButton onClick={mailLink}>
+              <AiOutlineMail />
+            </IconButton>
+          </Grid>
         </Box>
 
         <Box borderColor={'black'}>
