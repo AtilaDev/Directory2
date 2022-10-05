@@ -2,3 +2,6 @@
   margin: 100px auto;
   max-width: 1400px;  
 }
+
+a:link { color: #000; }
+a:visited { color: #000; }

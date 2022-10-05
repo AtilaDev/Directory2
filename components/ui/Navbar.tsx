@@ -145,10 +145,6 @@ export const Navbar = ({ onChange }: Props) => {
             </IconButton>
           </HtmlTooltip>
 
-          <IconButton onClick={atilaDevLink}>
-            <AiOutlineGlobal />
-          </IconButton>
-
           {/* Put inside of Drawer in the future */}
           <Grid item sx={{ display: { xs: 'none', sm: 'inline' } }}>
             <IconButton onClick={gitHubLink}>
@@ -167,6 +163,10 @@ export const Navbar = ({ onChange }: Props) => {
               <AiOutlineMail />
             </IconButton>
           </Grid>
+
+          <IconButton onClick={atilaDevLink}>
+            <AiOutlineGlobal />
+          </IconButton>
         </Box>
 
         <Box borderColor={'black'}>
