@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useRef } from 'react';
+import { ChangeEvent, useEffect, useRef, useState } from 'react';
 import NextLink from 'next/link';
 import {
   AppBar,
@@ -13,6 +13,7 @@ import { AiOutlineMenu } from 'react-icons/ai';
 import SearchIcon from '@mui/icons-material/Search';
 import { NavbarTopItems } from './NavbarTopItems';
 import { Search, SearchIconWrapper, StyledInputBase } from './WrapperSearchBar';
+import { SideMenu } from './SideMenu';
 
 interface Props {
   onChange?: (value: ChangeEvent<HTMLInputElement>) => void;
@@ -20,6 +21,10 @@ interface Props {
 
 export const Navbar = ({ onChange }: Props) => {
   const searchRef = useRef<HTMLInputElement>(null);
+  const [openDrawer, setOpenDrawer] = useState(false);
+
+  const openSideMenu = () => setOpenDrawer(true);
+  const closeSideMenu = () => setOpenDrawer(false);
 
   const detectKeyDown = (e: KeyboardEvent) => {
     if (e.key !== '/') return;
@@ -36,9 +41,10 @@ export const Navbar = ({ onChange }: Props) => {
     <AppBar>
       <Toolbar>
         <Grid item sx={{ display: { xs: 'block', sm: 'none' } }}>
-          <IconButton>
+          <IconButton onClick={openSideMenu}>
             <AiOutlineMenu />
           </IconButton>
+          <SideMenu open={openDrawer} onClose={closeSideMenu} />
         </Grid>
 
         <NextLink href={'/'} passHref>
