@@ -5,10 +5,11 @@ import {
   AiFillInfoCircle,
   AiOutlineGithub,
   AiOutlineLinkedin,
-  AiOutlineTwitter,
+  // AiOutlineTwitter,
   AiOutlineMail,
   AiOutlineGlobal,
 } from 'react-icons/ai';
+import { FaXTwitter } from 'react-icons/fa6';
 import { HtmlTooltip } from './HtmlTooltip';
 import * as externalLinks from '../../utils';
 
@@ -73,7 +74,7 @@ export const NavbarTopItems = () => {
           }
         >
           <IconButton onClick={externalLinks.twitterLink}>
-            <AiOutlineTwitter />
+            <FaXTwitter />
           </IconButton>
         </HtmlTooltip>
 
