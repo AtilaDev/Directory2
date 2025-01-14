@@ -1,5 +1,5 @@
-import { ChangeEvent, useEffect, useRef, useState } from 'react';
-import NextLink from 'next/link';
+import { ChangeEvent, useEffect, useRef, useState } from "react";
+import NextLink from "next/link";
 import {
   AppBar,
   Box,
@@ -8,13 +8,12 @@ import {
   Link,
   Toolbar,
   Typography,
-} from '@mui/material';
-import { AiOutlineMenu } from 'react-icons/ai';
-import SearchIcon from '@mui/icons-material/Search';
-import { NavbarTopItems } from './NavbarTopItems';
-import { Search, SearchIconWrapper, StyledInputBase } from './WrapperSearchBar';
-import { SideMenu } from './SideMenu';
-import { version } from '../../package.json';
+} from "@mui/material";
+import { AiOutlineMenu } from "react-icons/ai";
+import SearchIcon from "@mui/icons-material/Search";
+import { NavbarTopItems } from "./NavbarTopItems";
+import { Search, SearchIconWrapper, StyledInputBase } from "./WrapperSearchBar";
+import { SideMenu } from "./SideMenu";
 
 interface Props {
   onChange?: (value: ChangeEvent<HTMLInputElement>) => void;
@@ -28,50 +27,44 @@ export const Navbar = ({ onChange }: Props) => {
   const closeSideMenu = () => setOpenDrawer(false);
 
   const detectKeyDown = (e: KeyboardEvent) => {
-    if (e.key !== '/') return;
+    if (e.key !== "/") return;
     setTimeout(() => {
       searchRef.current?.focus();
     }, 50);
   };
 
   useEffect(() => {
-    document.addEventListener('keydown', detectKeyDown, true);
+    document.addEventListener("keydown", detectKeyDown, true);
   }, []);
 
   return (
     <AppBar>
       <Toolbar>
-        <Grid item sx={{ display: { xs: 'block', sm: 'none' } }}>
+        <Grid item sx={{ display: { xs: "block", sm: "none" } }}>
           <IconButton onClick={openSideMenu}>
             <AiOutlineMenu />
           </IconButton>
           <SideMenu open={openDrawer} onClose={closeSideMenu} />
         </Grid>
 
-        <NextLink href={'/'} passHref>
+        <NextLink href={"/"} passHref>
           <Link
-            display={'flex'}
-            alignItems={'center'}
-            justifyContent={'center'}
+            display={"flex"}
+            alignItems={"center"}
+            justifyContent={"center"}
           >
-            <Typography variant='h6'>Directory | AtilaDev</Typography>
+            <Typography variant="h6">Directory | AtilaDev</Typography>
           </Link>
         </NextLink>
-
-        <Box sx={{ display: { xs: 'none', sm: 'inline' } }} ml={2}>
-          <Typography variant='caption' color='gray'>
-            Version: {version}
-          </Typography>
-        </Box>
 
         <Box flex={1} />
 
         <NavbarTopItems />
 
-        <Box borderColor={'black'}>
+        <Box borderColor={"black"}>
           <Search
             sx={{
-              display: { xs: 'none', md: 'block' },
+              display: { xs: "none", md: "block" },
             }}
           >
             <SearchIconWrapper>
@@ -80,22 +73,22 @@ export const Navbar = ({ onChange }: Props) => {
             <StyledInputBase
               inputRef={searchRef}
               onChange={onChange}
-              placeholder='focus: /'
-              inputProps={{ 'aria-label': 'search' }}
+              placeholder="focus: /"
+              inputProps={{ "aria-label": "search" }}
             />
           </Search>
         </Box>
       </Toolbar>
 
-      <Search sx={{ display: { xs: 'block', md: 'none' } }}>
+      <Search sx={{ display: { xs: "block", md: "none" } }}>
         <SearchIconWrapper>
           <SearchIcon />
         </SearchIconWrapper>
         <StyledInputBase
           fullWidth
           onChange={onChange}
-          placeholder='Search...'
-          inputProps={{ 'aria-label': 'search' }}
+          placeholder="Search..."
+          inputProps={{ "aria-label": "search" }}
         />
       </Search>
     </AppBar>

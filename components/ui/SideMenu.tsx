@@ -6,7 +6,7 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
-} from '@mui/material';
+} from "@mui/material";
 
 import {
   AiOutlineGithub,
@@ -14,10 +14,9 @@ import {
   AiOutlineLinkedin,
   AiOutlineMail,
   AiOutlineTwitter,
-} from 'react-icons/ai';
-import * as externalLinks from '../../utils';
-import Typography from '@mui/material/Typography';
-import { version } from '../../package.json';
+} from "react-icons/ai";
+import * as externalLinks from "../../utils";
+import Typography from "@mui/material/Typography";
 
 interface Props {
   open: boolean;
@@ -28,60 +27,54 @@ export const SideMenu = ({ open, onClose }: Props) => {
   return (
     <Drawer
       open={open}
-      anchor='left'
-      sx={{ backdropFilter: 'blur(4px)', transition: 'all 0.5s ease-out' }}
+      anchor="left"
+      sx={{ backdropFilter: "blur(4px)", transition: "all 0.5s ease-out" }}
       onClose={onClose}
     >
       <Box sx={{ width: 250, paddingTop: 5 }}>
         <List>
           <ListItem>
-            <Typography variant='subtitle1'>Directory | AtilaDev</Typography>
+            <Typography variant="subtitle1">Directory | AtilaDev</Typography>
           </ListItem>
 
-          <Divider variant='middle' />
+          <Divider variant="middle" />
 
           <ListItem button onClick={externalLinks.gitHubLink}>
             <ListItemIcon>
               <AiOutlineGithub />
             </ListItemIcon>
-            <ListItemText primary={'GitHub'} />
+            <ListItemText primary={"GitHub"} />
           </ListItem>
 
           <ListItem button onClick={externalLinks.linkedInLink}>
             <ListItemIcon>
               <AiOutlineLinkedin />
             </ListItemIcon>
-            <ListItemText primary={'LinkedIn'} />
+            <ListItemText primary={"LinkedIn"} />
           </ListItem>
 
           <ListItem button onClick={externalLinks.twitterLink}>
             <ListItemIcon>
               <AiOutlineTwitter />
             </ListItemIcon>
-            <ListItemText primary={'Twitter'} />
+            <ListItemText primary={"Twitter"} />
           </ListItem>
 
           <ListItem button onClick={externalLinks.mailLink}>
             <ListItemIcon>
               <AiOutlineMail />
             </ListItemIcon>
-            <ListItemText primary={'Email'} />
+            <ListItemText primary={"Email"} />
           </ListItem>
 
           <ListItem button onClick={externalLinks.atilaDevLink}>
             <ListItemIcon>
               <AiOutlineGlobal />
             </ListItemIcon>
-            <ListItemText primary={'Personal Website'} />
+            <ListItemText primary={"Personal Website"} />
           </ListItem>
 
-          <Divider variant='middle' sx={{ mt: 1 }} />
-
-          <ListItem>
-            <Typography variant='caption' color='gray'>
-              Version: {version}
-            </Typography>
-          </ListItem>
+          <Divider variant="middle" sx={{ mt: 1 }} />
         </List>
       </Box>
     </Drawer>

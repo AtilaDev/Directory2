@@ -1,6 +1,6 @@
-import React from 'react';
-import NextLink from 'next/link';
-import { Box, Typography, IconButton, Grid } from '@mui/material';
+import React from "react";
+import NextLink from "next/link";
+import { Box, Typography, IconButton, Grid } from "@mui/material";
 import {
   AiFillInfoCircle,
   AiOutlineGithub,
@@ -8,28 +8,28 @@ import {
   // AiOutlineTwitter,
   AiOutlineMail,
   AiOutlineGlobal,
-} from 'react-icons/ai';
-import { FaXTwitter } from 'react-icons/fa6';
-import { HtmlTooltip } from './HtmlTooltip';
-import * as externalLinks from '../../utils';
+} from "react-icons/ai";
+import { FaXTwitter } from "react-icons/fa6";
+import { HtmlTooltip } from "./HtmlTooltip";
+import * as externalLinks from "../../utils";
 
 export const NavbarTopItems = () => {
   return (
-    <Box sx={{ display: { xs: 'block' } }}>
+    <Box sx={{ display: { xs: "block" } }}>
       <HtmlTooltip
         title={
           <>
-            <Typography variant='subtitle1' color='inherit'>
+            <Typography variant="subtitle1" color="inherit">
               Directory App
             </Typography>
-            <Typography variant='subtitle2'>
-              Is an easy & quick search to find google fonts using{' '}
-              <NextLink href='https://github.com/expo/google-fonts' passHref>
-                <a target='_blank'>@expo-google-fonts</a>
-              </NextLink>{' '}
-              for your React Native App. Developed with ❤️ by{' '}
-              <NextLink href='https://atiladev.com/en' passHref>
-                <a target='_blank'>AtilaDev</a>
+            <Typography variant="subtitle2">
+              Is an easy & quick search to find google fonts using{" "}
+              <NextLink href="https://github.com/expo/google-fonts" passHref>
+                <a target="_blank">@expo-google-fonts</a>
+              </NextLink>{" "}
+              for your React Native App. Developed with ❤️ by{" "}
+              <NextLink href="https://atiladev.com" passHref>
+                <a target="_blank">AtilaDev</a>
               </NextLink>
             </Typography>
           </>
@@ -41,10 +41,10 @@ export const NavbarTopItems = () => {
       </HtmlTooltip>
 
       {/* Put inside of Drawer in the future */}
-      <Grid item sx={{ display: { xs: 'none', sm: 'inline' } }}>
+      <Grid item sx={{ display: { xs: "none", sm: "inline" } }}>
         <HtmlTooltip
           title={
-            <Typography variant='subtitle2' color='inherit'>
+            <Typography variant="subtitle2" color="inherit">
               GitHub
             </Typography>
           }
@@ -56,7 +56,7 @@ export const NavbarTopItems = () => {
 
         <HtmlTooltip
           title={
-            <Typography variant='subtitle2' color='inherit'>
+            <Typography variant="subtitle2" color="inherit">
               LinkedIn
             </Typography>
           }
@@ -68,7 +68,7 @@ export const NavbarTopItems = () => {
 
         <HtmlTooltip
           title={
-            <Typography variant='subtitle2' color='inherit'>
+            <Typography variant="subtitle2" color="inherit">
               Twitter
             </Typography>
           }
@@ -80,7 +80,7 @@ export const NavbarTopItems = () => {
 
         <HtmlTooltip
           title={
-            <Typography variant='subtitle2' color='inherit'>
+            <Typography variant="subtitle2" color="inherit">
               Email
             </Typography>
           }
@@ -93,7 +93,7 @@ export const NavbarTopItems = () => {
 
       <HtmlTooltip
         title={
-          <Typography variant='subtitle2' color='inherit'>
+          <Typography variant="subtitle2" color="inherit">
             Personal Website
           </Typography>
         }
